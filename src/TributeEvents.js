@@ -82,6 +82,9 @@ class TributeEvents {
   click(instance, event) {
     let tribute = instance.tribute;
     if (tribute.menu && tribute.menu.contains(event.target)) {
+      // Could be the scrollbar
+      if(event.target.classList.contains('tribute-container')) return
+
       let li = event.target;
       event.preventDefault();
       event.stopPropagation();
